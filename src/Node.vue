@@ -24,58 +24,74 @@
 </template>
 
 <script>
-import mixin from './mixin';
-import Socket from './Socket.vue';
+import mixin from "./mixin";
+import Socket from "./Socket.vue";
 
 export default {
   mixins: [mixin],
   components: {
     Socket
   }
-}
+};
 </script>
 
-<style lang="sass" scoped>
-@import "./vars"
+<style lang="scss" scoped>
+.node {
+  background: rgba(110, 136, 255, 0.8);
+  border: 2px solid #4e58bf;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 180px;
+  height: auto;
+  padding-bottom: 6px;
+  box-sizing: content-box;
+  position: relative;
+  user-select: none;
 
-.node
-  background: $node-color
-  border: 2px solid #4e58bf
-  border-radius: 10px
-  cursor: pointer
-  min-width: $node-width
-  height: auto
-  padding-bottom: 6px
-  box-sizing: content-box
-  position: relative
-  user-select: none
-  &:hover
-    background: lighten($node-color,4%)
-  &.selected
-    background: $node-color-selected
-    border-color: #e3c000
-  .title
-    color: white
-    font-family: sans-serif
-    font-size: 18px
-    padding: 8px
-  .output
-    text-align: right
-  .input
-    text-align: left
-  .input-title,.output-title
-    vertical-align: middle
-    color: white
-    display: inline-block
-    font-family: sans-serif
-    font-size: 14px
-    margin: $socket-margin
-    line-height: $socket-size
-  .input-control
-    z-index: 1
-    width: calc(100% - #{$socket-size + 2*$socket-margin})
-    vertical-align: middle
-    display: inline-block
-  .control
-    padding: $socket-margin $socket-size/2 + $socket-margin
+  &:hover {
+    background: rgba(130, 153, 255, 0.8);
+  }
+
+  &.selected {
+    background: #ffd92c;
+    border-color: #e3c000;
+  }
+
+  .title {
+    color: white;
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .output {
+    text-align: right;
+  }
+
+  .input {
+    text-align: left;
+  }
+
+  .input-title,
+  .output-title {
+    vertical-align: middle;
+    color: white;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 6px;
+    line-height: 24px;
+  }
+
+  .input-control {
+    z-index: 1;
+    width: calc(100% - 36px);
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .control {
+    padding: 6px 18px;
+  }
+}
 </style>

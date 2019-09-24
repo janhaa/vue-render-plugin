@@ -7,31 +7,38 @@
 
 <script>
 export default {
-  props: ['type', 'socket']
-}
+  props: ["type", "socket"]
+};
 </script>
 
-<style lang="sass" scoped>
-@import "./vars"
+<style lang="scss" scoped>
+.socket {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 12px;
+  width: 24px;
+  height: 24px;
+  margin: 6px;
+  vertical-align: middle;
+  background: #96b38a;
+  z-index: 2;
+  box-sizing: border-box;
 
-.socket
-  display: inline-block
-  cursor: pointer
-  border: 1px solid white
-  border-radius: $socket-size/2.0
-  width: $socket-size
-  height: $socket-size
-  margin: $socket-margin
-  vertical-align: middle
-  background: $socket-color
-  z-index: 2
-  box-sizing: border-box
-  &:hover
-    border-width: 4px
-  &.multiple
-    border-color: yellow
-  &.output
-    margin-right: - $socket-size / 2
-  &.input
-    margin-left: - $socket-size / 2
+  &:hover {
+    border-width: 4px;
+  }
+
+  &.multiple {
+    border-color: yellow;
+  }
+
+  &.output {
+    margin-right: -12px;
+  }
+
+  &.input {
+    margin-left: -12px;
+  }
+}
 </style>
