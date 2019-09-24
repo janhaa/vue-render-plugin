@@ -64,11 +64,11 @@ export default {
     padding: 8px;
   }
 
-  .output {
+  .outputSocket {
     text-align: right;
   }
 
-  .input {
+  .inputSocket {
     text-align: left;
   }
 
