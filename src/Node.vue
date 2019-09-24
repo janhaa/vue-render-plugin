@@ -3,18 +3,18 @@
   .title {{node.name}}
 
   // Outputs
-  .output(v-for='output in outputs()' :key="output.key")
+  .outputSocket(v-for='output in outputs()' :key="output.key")
     .output-title {{output.name}}
     Socket(v-socket:output="output", type="output", :socket="output.socket")
 
   // Controls
-  .control(
+  .controlSocket(
     v-for='control in controls()',
     v-control="control"
   )
 
   // Inputs
-  .input(v-for='input in inputs()' :key="input.key")
+  .inputSocket(v-for='input in inputs()' :key="input.key")
     Socket(v-socket:input="input", type="input", :socket="input.socket")
     .input-title(v-show='!input.showControl()') {{input.name}}
     .input-control(
