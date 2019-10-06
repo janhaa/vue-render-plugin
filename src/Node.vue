@@ -1,5 +1,7 @@
 <template lang="pug">
 .node(:class="[selected(), node.name] | kebab")
+  span.icon
+    i.mdi.mdi-24px(:class="'mdi-' + (icon(node.name) || 'link')")
   .title {{node.name}}
 
   // Outputs
@@ -36,10 +38,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$background-color: #4a4a4a;
+$selected-background-color: #7957d5;
+$hover-background-color: darken(#4a4a4a, 10%);
+
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+.icon {
+  float: left;
+  color: white;
+  margin: 6px;
+}
+
 .node {
-  background: rgba(110, 136, 255, 0.8);
-  border: 2px solid #4e58bf;
-  border-radius: 10px;
+  background: $background-color;
+  border: 3px solid;
+  background-color: lighten($background-color, 5%);
+  border-radius: 3px;
   cursor: pointer;
   min-width: 180px;
   height: auto;
@@ -47,19 +62,22 @@ export default {
   box-sizing: content-box;
   position: relative;
   user-select: none;
+  margin-bottom: 0;
 
   &:hover {
-    background: rgba(130, 153, 255, 0.8);
+    background-color: $hover-background-color;
+    border-color: lighten($hover-background-color, 5%);
+    color: #363636;
   }
 
-  &.selected {
-    background: #ffd92c;
-    border-color: #e3c000;
-  }
+  // &.selected {
+  //   background-color: $selected-background-color;
+  //   border-color: lighten($selected-background-color, 5%);
+  // }
 
   .title {
     color: white;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 18px;
     padding: 8px;
   }
@@ -77,8 +95,8 @@ export default {
     vertical-align: middle;
     color: white;
     display: inline-block;
-    font-family: sans-serif;
-    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
     margin: 6px;
     line-height: 24px;
   }
@@ -92,6 +110,10 @@ export default {
 
   .control {
     padding: 6px 18px;
+  }
+
+  .controlSocket {
+    padding: 5px;
   }
 }
 </style>

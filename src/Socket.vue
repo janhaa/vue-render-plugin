@@ -12,6 +12,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
 .socket {
   display: inline-block;
   cursor: pointer;
@@ -21,12 +23,14 @@ export default {
   height: 24px;
   margin: 6px;
   vertical-align: middle;
-  background: #96b38a;
+  background: darkred;
   z-index: 2;
   box-sizing: border-box;
 
+  transition: border-width 0.2s;
+
   &:hover {
-    border-width: 4px;
+    border-width: 3px;
   }
 
   &.multiple {
